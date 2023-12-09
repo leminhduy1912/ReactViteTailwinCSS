@@ -1,8 +1,5 @@
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-// import { homeCaroselData } from "./HomeCarosel";
-import image1 from "../../../../asset/download (3).jpg";
-import image2 from "../../../../asset/download (5).jpg";
 
 import image6 from "../../../../asset/test.jpg";
 import image7 from "../../../../asset/test.jpg";
@@ -13,12 +10,6 @@ const responsive = {
   1024: { items: 3 },
 };
 const homeCaroselData = [
-  {
-    image: image1,
-  },
-  {
-    image: image2,
-  },
   {
     image: image6,
   },
@@ -40,10 +31,13 @@ const HomeCarosel = () => {
   });
   return (
     <AliceCarousel
-      mouseTracking
       items={items}
       responsive={responsive}
-      controlsStrategy="alternate"
+      autoPlay
+      infinite
+      disableButtonsControls
+      autoPlayInterval={2500}
+      disableDotsControls
     />
   );
 };
